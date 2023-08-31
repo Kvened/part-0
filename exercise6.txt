@@ -1,0 +1,21 @@
+// User creates a new note using the single-page app (SPA) version of the notes app
+
+// The user enters content in the text field and clicks the "Save" button
+
+// The browser executes JavaScript code to handle the form submission
+
+// The browser constructs a new note object with the entered content and current date
+var note = {
+  content: "User's entered content",
+  date: "Current date and time"
+}
+
+// The browser sends an HTTP POST request to the server to create the new note
+browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa with JSON data
+
+// The server processes the request and adds the new note to the data
+// The server responds with status code 201 (created)
+server-->>browser: HTTP response with status 201
+
+// The browser updates the UI to display the newly added note
+Note right of browser: Update UI with new note

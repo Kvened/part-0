@@ -1,0 +1,15 @@
+// User interacts with the webpage
+// (Writes something into the text field and clicks the Save button)
+
+// The browser sends a POST request to the server to save the new note
+browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+// The server receives the POST request and processes the data
+activate server
+server->>server: Save new note data
+
+// The server responds to the browser with a success status
+server-->>browser: HTTP 201 Created
+
+// The browser updates the page with the new note
+browser->>browser: Update notes list with new note

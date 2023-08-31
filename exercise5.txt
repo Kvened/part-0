@@ -1,0 +1,21 @@
+
+// User goes to the single-page app version of the notes app
+// by visiting the URL: https://studies.cs.helsinki.fi/exampleapp/spa
+
+// The browser sends a GET request to the server to fetch the SPA page
+browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+
+// The server responds with the HTML content of the SPA page
+server-->>browser: HTML content of SPA page
+
+// The browser starts executing the JavaScript code from the SPA page
+Note right of browser: JavaScript code fetches notes data from server
+
+// The browser sends a GET request to fetch the notes data (JSON)
+browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+// The server responds with the JSON data of the notes
+server-->>browser: JSON data of notes
+
+// The browser executes the callback function to render the notes on the page
+Note right of browser: Render notes using JavaScript
